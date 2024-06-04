@@ -1,18 +1,28 @@
 #include <iostream>
 #include"declararFunciones.h"
+#include "rlutil.h"
 using namespace std;
 
 void crearMenu(int opcion){
 int dato=1;
 while(dato!=0){
+    rlutil::locate(60,10);
     cout<<"1-)Iniciar juego para un jugador"<<endl;
-    cout<<"------------------------------"<<endl;
+     rlutil::locate(50,11);
+    cout<<"-------------------------------------------------------------"<<endl;
+    rlutil::locate(60,12);
     cout<<"2-)Iniciar juego para dos jugadores"<<endl;
-    cout<<"------------------------------"<<endl;
+    rlutil::locate(50,13);
+    cout<<"-------------------------------------------------------------"<<endl;
+    rlutil::locate(60,14);
     cout<<"3-)Mostrar puntuacion mas alta"<<endl;
-    cout<<"------------------------------"<<endl;
-    cout<<"4-)Ingrese 0 para salir del juego"<<endl;
-    cout<<"------------------------------"<<endl;
+     rlutil::locate(50,15);
+    cout<<"-------------------------------------------------------------"<<endl;
+    rlutil::locate(60,16);
+    cout<<"0-)Salir del juego"<<endl;
+    rlutil::locate(50,17);
+    cout<<"-------------------------------------------------------------"<<endl;
+    rlutil::locate(65,18);
     cout<<"Ingrese la opcion elegida: ";
     cin>>opcion;
     switch(opcion){
@@ -34,7 +44,7 @@ case 3:
     system("pause");
     system("cls");
     break;
-case 4:
+case 0:
     system("cls");
     dato=0;
     return;
