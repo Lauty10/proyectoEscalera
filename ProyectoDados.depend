@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1717512174 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\main.cpp
+	<iostream>
+	"declararFunciones.h"
+
+1717512247 c:\users\lauty\onedrive\escritorio\proyectoescalera\declararfunciones.h
+
+1717512568 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
+	<iostream>
+	"declararFunciones.h"
+

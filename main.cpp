@@ -2,8 +2,8 @@
 #include"declararFunciones.h"
 using namespace std;
 
-int main()
-{
-    cout << "Iniciando proyecto escalera" << endl;
-    return 0;
+int main(){
+int opcion;
+crearMenu(opcion);
+return 0;
 }
