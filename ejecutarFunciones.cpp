@@ -4,25 +4,19 @@
 using namespace std;
 
 void crearMenu(int opcion){
+int ancho=rlutil::tcols()/2;
+int altura=rlutil::trows()/2;
 int dato=1;
 while(dato!=0){
-    rlutil::locate(60,10);
+    rlutil::locate(ancho,altura);
     cout<<"1-)Iniciar juego para un jugador"<<endl;
-     rlutil::locate(50,11);
-    cout<<"-------------------------------------------------------------"<<endl;
-    rlutil::locate(60,12);
+    rlutil::locate(ancho,altura+2);
     cout<<"2-)Iniciar juego para dos jugadores"<<endl;
-    rlutil::locate(50,13);
-    cout<<"-------------------------------------------------------------"<<endl;
-    rlutil::locate(60,14);
+    rlutil::locate(ancho,altura+4);
     cout<<"3-)Mostrar puntuacion mas alta"<<endl;
-     rlutil::locate(50,15);
-    cout<<"-------------------------------------------------------------"<<endl;
-    rlutil::locate(60,16);
+    rlutil::locate(ancho,altura+6);
     cout<<"0-)Salir del juego"<<endl;
-    rlutil::locate(50,17);
-    cout<<"-------------------------------------------------------------"<<endl;
-    rlutil::locate(65,18);
+    rlutil::locate(ancho,altura+8);
     cout<<"Ingrese la opcion elegida: ";
     cin>>opcion;
     switch(opcion){
