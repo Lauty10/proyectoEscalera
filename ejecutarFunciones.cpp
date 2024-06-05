@@ -7,7 +7,7 @@
 using namespace std;
 
 void crearMenu(int opcion){
-int vectorD[6];
+int vectorD[3],acumuladorTirada;
 std::string nombre;
 int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
@@ -62,7 +62,12 @@ case 1:
     system("cls");
     guardarNombre(nombre);
     calculoDado(vectorD);
-    system("cls");
+    escalera(vectorD);
+     system("cls");;
+    if(acumuladorTirada==100){
+        cout<<"Ustes gano la partida por escalera";
+          system("pause");
+    }
     break;
 case 2:
     system("cls");
@@ -104,16 +109,39 @@ std::string guardarNombre(std::string nombre){
 }
 
 void calculoDado(int vectorD[6]){
+  int puntos=0;
+
   srand(time(NULL));
-  for (int i=0; i<6;i++){
-  vectorD[i]=(rand()%6)+1;
+  for (int i=0; i<3;i++){
+  vectorD[i]=(rand()%3)+1;
   rlutil::locate(10,10);
   cout<<"EL NUMERO DEL DADO "<< i+1 <<" ES "<<vectorD[i]<<endl;
-   for(int j=1;j<120;j++){
+  for(int j=0;j<6;j++)
+  for(int j=1;j<120;j++){
         rlutil::locate(j,12);
         cout<<char(186);
     }
    rlutil::locate(10,30);
    system("pause");
  }
+
+}
+
+int escalera(int vectorD[3]){
+  int escalera=0, numVerificado=0,bandera=0,acumuladorTirada=0;
+  for(int i=0; i<3;i++){
+  if(bandera==0){
+    numVerificado=vectorD[i];
+    bandera=1;
+    escalera++;
+  }
+  else if(numVerificado!=vectorD[i]){
+    escalera++;
+    numVerificado=vectorD[i];
+    }
+    if(escalera==3){
+    acumuladorTirada=100;
+    }
+  }
+  return acumuladorTirada;
 }
