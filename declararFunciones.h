@@ -3,6 +3,6 @@
 #include <string>
 void crearMenu(int opcion);
 std::string guardarNombre(std::string nombre);
-void calculoDado(int vectorD[3]);
-int escalera(int vectorD[3]);
+void calculoDado(int vectorD[6]);
+int escalera(int vectorD[6]);
 #endif // DECLARARFUNCIONES_H_INCLUDED
