@@ -1,9 +1,11 @@
 #include <iostream>
 #include"declararFunciones.h"
 #include "rlutil.h"
+#include <string>
 using namespace std;
 
 void crearMenu(int opcion){
+std::string nombre;
 int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
 int altura=rlutil::trows()/2;
@@ -55,7 +57,7 @@ while(dato!=0){
     switch(opcion){
 case 1:
     system("cls");
-    cout<<"ACA OPCION 1"<<endl;
+    guardarNombre(nombre);
     system("pause");
     system("cls");
     break;
@@ -83,5 +85,12 @@ default:
     system("cls");
 }
 }
+}
+
+std::string guardarNombre(std::string nombre){
+  cout<<"ingrese el nombre del jugador "<<endl;
+  cin>>nombre;
+  cout<<"Bienvenid@ "<<nombre<<endl;
+   return nombre;
 }
 
