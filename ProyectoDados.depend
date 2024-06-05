@@ -1,17 +1,24 @@
 # depslib dependency file v1.0
-1717555002 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\main.cpp
+1717605995 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\main.cpp
+	<iostream>
+	<string>
+	"declararFunciones.h"
+	"rlutil.h"
+	<cstdlib>
+	<ctime>
+
+1717605995 c:\users\lauty\onedrive\escritorio\proyectoescalera\declararfunciones.h
+	<string>
+
+1717607417 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
 	<iostream>
 	"declararFunciones.h"
 	"rlutil.h"
+	<string>
+	<cstdlib>
+	<ctime>
 
-1717553988 c:\users\lauty\onedrive\escritorio\proyectoescalera\declararfunciones.h
-
-1717556346 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
-	<iostream>
-	"declararFunciones.h"
-	"rlutil.h"
-
-1717524418 c:\users\lauty\onedrive\escritorio\proyectoescalera\rlutil.h
+1717605995 c:\users\lauty\onedrive\escritorio\proyectoescalera\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -25,24 +32,26 @@
 	<sys/types.h>
 	<sys/time.h>
 
-<<<<<<< HEAD
-1717605012 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
-=======
+1717537325 D
+
 1717604729 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
->>>>>>> 50f93dbe6b21bf245d99c3dcbec854e9eb8c4c50
+
+1717604729 93dbe6b21bf245d99c3dcbec854e9eb8c4c50
 	<iostream>
 	"declararFunciones.h"
 	"rlutil.h"
 	<string>
 	<cstdlib>
 	<ctime>
-
-<<<<<<< HEAD
-1717605012 c:\users\estudiante\onedrive\escritorio\proyectoescalera\declararfunciones.h
-=======
-1717604729 c:\users\estudiante\onedrive\escritorio\proyectoescalera\declararfunciones.h
->>>>>>> 50f93dbe6b21bf245d99c3dcbec854e9eb8c4c50
 	<string>
+	<iostream>
+	<string>
+	"declararFunciones.h"
+	"rlutil.h"
+	<cstdlib>
+	<ctime>
+
+1717604729 c:\users\estudiante\onedrive\escritorio\proyectoescalera\declararfunciones.h
 
 1717537325 c:\users\estudiante\onedrive\escritorio\proyectoescalera\rlutil.h
 	<iostream>
@@ -58,15 +67,5 @@
 	<sys/types.h>
 	<sys/time.h>
 
-<<<<<<< HEAD
-1717605012 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\main.cpp
-=======
 1717604729 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\main.cpp
->>>>>>> 50f93dbe6b21bf245d99c3dcbec854e9eb8c4c50
-	<iostream>
-	<string>
-	"declararFunciones.h"
-	"rlutil.h"
-	<cstdlib>
-	<ctime>
 

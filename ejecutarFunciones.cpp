@@ -7,12 +7,12 @@
 using namespace std;
 
 void crearMenu(int opcion){
+int vectorD[6];
 std::string nombre;
 int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
 int altura=rlutil::trows()/2;
 int dato=1;
-int vectorD[6];
 while(dato!=0){
      rlutil::locate(48,5);
     cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
@@ -62,7 +62,6 @@ case 1:
     system("cls");
     guardarNombre(nombre);
     calculoDado(vectorD);
-    system("pause");
     system("cls");
     break;
 case 2:
@@ -92,16 +91,29 @@ default:
 }
 
 std::string guardarNombre(std::string nombre){
-  cout<<"ingrese el nombre del jugador "<<endl;
+  int ancho=rlutil::tcols()/2;
+  rlutil::locate(10,5);
+  cout<<"INGRESE NOMBRE DEL JUGADOR: "<<endl;
+  for(int j=1;j<120;j++){
+        rlutil::locate(j,7);
+        cout<<char(186);
+    }
+  rlutil::locate(40,5);
   cin>>nombre;
-  cout<<"Bienvenid@ "<<nombre<<endl;
-   return nombre;
+  return nombre;
 }
 
 void calculoDado(int vectorD[6]){
   srand(time(NULL));
   for (int i=0; i<6;i++){
   vectorD[i]=(rand()%6)+1;
-  cout<<vectorD[i]<<endl;
+  rlutil::locate(10,10);
+  cout<<"EL NUMERO DEL DADO "<< i+1 <<" ES "<<vectorD[i]<<endl;
+   for(int j=1;j<120;j++){
+        rlutil::locate(j,12);
+        cout<<char(186);
+    }
+   rlutil::locate(10,30);
+   system("pause");
  }
 }
