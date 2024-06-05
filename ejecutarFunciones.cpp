@@ -8,6 +8,19 @@ int ancho=rlutil::tcols()/2;
 int altura=rlutil::trows()/2;
 int dato=1;
 while(dato!=0){
+    for(int j=41;j<110;j++){
+        rlutil::locate(j,12);
+       cout<<"-";
+       rlutil::locate(j,27);
+       cout<<"-";
+    }
+       for(int j=13;j<27;j++){
+        rlutil::locate(40,j);
+        cout<<char(221);
+        rlutil::locate(110,j);
+        cout<<char(221);
+    }
+
     rlutil::locate(ancho,altura);
     cout<<"1-)Iniciar juego para un jugador"<<endl;
     rlutil::locate(ancho,altura+2);

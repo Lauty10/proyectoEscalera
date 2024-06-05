@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1717525871 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\main.cpp
+1717543111 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\main.cpp
 	<iostream>
 	"declararFunciones.h"
 	"rlutil.h"
 
 1717513618 c:\users\lauty\onedrive\escritorio\proyectoescalera\declararfunciones.h
 
-1717525630 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
+1717543459 source:c:\users\lauty\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
 	<iostream>
 	"declararFunciones.h"
 	"rlutil.h"
