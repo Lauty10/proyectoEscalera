@@ -2,6 +2,8 @@
 #include"declararFunciones.h"
 #include "rlutil.h"
 #include <string>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 
 void crearMenu(int opcion){
@@ -10,6 +12,7 @@ int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
 int altura=rlutil::trows()/2;
 int dato=1;
+int vectorD[6];
 while(dato!=0){
      rlutil::locate(48,5);
     cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
@@ -58,6 +61,7 @@ while(dato!=0){
 case 1:
     system("cls");
     guardarNombre(nombre);
+    calculoDado(vectorD);
     system("pause");
     system("cls");
     break;
@@ -94,3 +98,10 @@ std::string guardarNombre(std::string nombre){
    return nombre;
 }
 
+void calculoDado(int vectorD[6]){
+  srand(time(NULL));
+  for (int i=0; i<6;i++){
+  vectorD[i]=(rand()%6)+1;
+  cout<<vectorD[i]<<endl;
+ }
+}
