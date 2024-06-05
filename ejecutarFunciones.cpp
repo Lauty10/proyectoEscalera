@@ -7,7 +7,7 @@
 using namespace std;
 
 void crearMenu(int opcion){
-int vectorD[6],acumuladorTirada;
+int vectorD[6];
 std::string nombre;
 int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
@@ -16,19 +16,6 @@ int dato=1;
 while(dato!=0){
      rlutil::locate(48,5);
     cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
-    for(int j=1;j<alturaTotal;j++){
-        rlutil::locate(10,j);
-        cout<<char(186);
-    }
-     for(int j=1;j<alturaTotal;j++){
-        rlutil::locate(12,j);
-        cout<<char(186);
-    }
-        for(int j=1;j<alturaTotal;j++){
-        rlutil::locate(14,j);
-        cout<<char(186);
-    }
-
     for(int j=41;j<110;j++){
         rlutil::locate(j,7);
          cout<<char(176);
@@ -47,26 +34,32 @@ while(dato!=0){
     }
 
     rlutil::locate(ancho,altura);
-    cout<<"1-)Iniciar juego para un jugador"<<endl;
+    cout<<"1-)INICIAR JUEGO PARA UN JUGADOR"<<endl;
     rlutil::locate(ancho,altura+2);
-    cout<<"2-)Iniciar juego para dos jugadores"<<endl;
+    cout<<"2-)INICIAR JUEGO PARA DOS JUGADORES"<<endl;
     rlutil::locate(ancho,altura+4);
-    cout<<"3-)Mostrar puntuacion mas alta"<<endl;
+    cout<<"3-)MOSTRAR PUNTUACION MAS ALTA"<<endl;
     rlutil::locate(ancho,altura+6);
-    cout<<"0-)Salir del juego"<<endl;
+    cout<<"0-)SALIR DEL JUEGO"<<endl;
     rlutil::locate(ancho,altura+8);
-    cout<<"Ingrese la opcion elegida: ";
+    cout<<"INGRESAR OPCION ELEGIDA: ";
     cin>>opcion;
     switch(opcion){
 case 1:
     system("cls");
     guardarNombre(nombre);
     calculoDado(vectorD);
-     system("cls");;
-    if(acumuladorTirada==100){
-        cout<<"Ustes gano la partida por escalera";
-          system("pause");
+    system("cls");
+    if(condicionEscalera(vectorD)==1){
+        rlutil::locate(50,10);
+        cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
+    }else{
+        rlutil::locate(50,10);
+      cout<<"LA SUERTE NO ESTA DE TU LADO NO SACASTE ESCALERA :("<<endl;
     }
+    rlutil::locate(10,30);
+   system("pause");
+    system("cls");
     break;
 case 2:
     system("cls");
@@ -112,7 +105,7 @@ void calculoDado(int vectorD[6]){
 
   srand(time(NULL));
   for (int i=0; i<6;i++){
-  vectorD[i]=(rand()%3)+1;
+  vectorD[i]=(rand()%6)+1;
   rlutil::locate(10,10);
   cout<<"EL NUMERO DEL DADO "<< i+1 <<" ES "<<vectorD[i]<<endl;
   for(int j=0;j<6;j++)
@@ -126,3 +119,17 @@ void calculoDado(int vectorD[6]){
 
 }
 
+int condicionEscalera(int vectorD[6]){
+int trueEscalera=1;
+for(int j=1;j<=6;j++){
+    int positivismo=0;
+    for(int z=0;z<6;z++){
+      if(j==vectorD[z])
+        positivismo++;
+        if(positivismo>1){
+        trueEscalera=0;
+        }
+    }
+}
+  return trueEscalera;
+}
