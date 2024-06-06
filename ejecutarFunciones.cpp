@@ -32,7 +32,6 @@ while(dato!=0){
         rlutil::locate(110,j);
         cout<<char(221);
     }
-
     rlutil::locate(ancho,altura);
     cout<<"1-)INICIAR JUEGO PARA UN JUGADOR"<<endl;
     rlutil::locate(ancho,altura+2);
@@ -50,27 +49,23 @@ case 1:
     guardarNombre(nombre);
     calculoDado(vectorD);
     system("cls");
-    if(condicionEscalera(vectorD)==1){
-        rlutil::locate(50,10);
-        cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
-    }else{
-        rlutil::locate(50,10);
-      cout<<"LA SUERTE NO ESTA DE TU LADO NO SACASTE ESCALERA :("<<endl;
+    if (condicionEscalera(vectorD)==1){
+      rlutil::locate(60,14);
+      cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
+      return;
     }
-    if(distintoDeSeis(vectorD)==6){
-        rlutil::locate(50,12);
-      cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
-      }
-    else{
-        rlutil::locate(50,12);
-        cout<<"LOS NUMEROS DE LOS DADOS NO SON IGUALES :( "<<endl;
+
+    if (condicionIguales(vectorD)==1){
+        rlutil::locate(60,14);
+      cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
     }
-    if(condicionIguales(vectorD)==1){
-         rlutil::locate(50,14);
-        cout<<"TODOS LOS NUMEROS SON IGUALES A 6 PERDES TU PUNTO :( "<<endl;
-    }else{
-        rlutil::locate(50,14);
-        cout<<"TODOS LOS NUMEROS NO SON IGUALES A 6 PODES SEGUIR PROBANDO :) "<<endl;
+else if (distintoDeSeis(vectorD)==6){
+        rlutil::locate(60,14);
+       cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
+        }
+    else {
+        rlutil::locate(60,14);
+        cout<<"LA SUMA DE SUS DADOS EN ESTA TIRADA ES :) = "<<sumaDeDados(vectorD)<<endl;
     }
     rlutil::locate(10,30);
     system("pause");
@@ -133,7 +128,6 @@ void calculoDado(int vectorD[6]){
  }
 
 }
-
 int condicionEscalera(int vectorD[6]){
 int trueEscalera=1;
 for(int j=1;j<=6;j++){
@@ -148,8 +142,6 @@ for(int j=1;j<=6;j++){
 }
   return trueEscalera;
 }
-
-//MUESTRA SI EL VALOR DE TODOS LOS DADOS ES IGUAL A 6
 int condicionIguales (int vectorD[6]){
 int contadorSeis;
 int dados=0;
@@ -163,8 +155,6 @@ int dados=0;
    }
    return dados;
    }
-
-//MUESTRA SI EL VALOR DE LOS DADOS ES IGUALES PERO SI EL VALOR ES DISTINTO DE SEIS
    int distintoDeSeis(int vectorD[6]){
    int contadorDistintos;
    int distinto=0;
@@ -185,7 +175,13 @@ int dados=0;
   return numRetorno;
    }
 
-
+int sumaDeDados(int vectorD[6]){
+int sumaDePuntos=0;
+for (int a=0;a<6;a++){
+    sumaDePuntos+=vectorD[a];
+}
+return sumaDePuntos;
+}
 
 
 
