@@ -57,14 +57,14 @@ case 1:
         rlutil::locate(50,10);
       cout<<"LA SUERTE NO ESTA DE TU LADO NO SACASTE ESCALERA :("<<endl;
     }
-    if (condicionIguales(vectorD)==1){
-      cout<<" PERDISTE TODOS TUS PUNTOS "<<endl;
+    if(distintoDeSeis(vectorD)==6){
+        rlutil::locate(50,14);
+      cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
+      }
+    else{
+        rlutil::locate(50,14);
+        cout<<"LOS NUMEROS DE LOS DADOS NO SON IGUALES :( "<<endl;
     }
-    else {cout<<"PUEDES SEGUIR JUGANDO"<<endl;}
-
-    if  (distintoDeSeis(vectorD)==1){
-      cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES"<<endl;}
-    else{cout<<"LOS NUMEROS DE LOS DADOS NO SON IGUALES"<<endl;}
     rlutil::locate(10,30);
     system("pause");
     system("cls");
@@ -162,23 +162,21 @@ int dados=0;
    int contadorDistintos;
    int distinto=0;
    int bandera=0;
-   int dadosI=0;
+   int numRetorno=0;
    for( int m=0; m<6;m++){
-   for (int t=0; t<6; t++)
-    if(bandera==0){
+    if(bandera==0 && vectorD[m]!=6){
        distinto=vectorD[m];
        contadorDistintos++;
-       bandera+1; }
-    else  {
-    if( distinto==vectorD[m]){
-        contadorDistintos++; }
-      }
-    }
-    if(contadorDistintos==6){
-      dadosI=1;
-    }
-    return dadosI;
+       bandera+1;
+       }else if(vectorD[m]==distinto&&vectorD[m]!=6){
+       contadorDistintos++;
+       }
  }
+ if(contadorDistintos==6){
+    numRetorno=distinto;
+ }
+  return numRetorno;
+   }
 
 
 
