@@ -58,12 +58,19 @@ case 1:
       cout<<"LA SUERTE NO ESTA DE TU LADO NO SACASTE ESCALERA :("<<endl;
     }
     if(distintoDeSeis(vectorD)==6){
-        rlutil::locate(50,14);
+        rlutil::locate(50,12);
       cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
       }
     else{
-        rlutil::locate(50,14);
+        rlutil::locate(50,12);
         cout<<"LOS NUMEROS DE LOS DADOS NO SON IGUALES :( "<<endl;
+    }
+    if(condicionIguales(vectorD)==1){
+         rlutil::locate(50,14);
+        cout<<"TODOS LOS NUMEROS SON IGUALES A 6 PERDES TU PUNTO :( "<<endl;
+    }else{
+        rlutil::locate(50,14);
+        cout<<"TODOS LOS NUMEROS NO SON IGUALES A 6 PODES SEGUIR PROBANDO :) "<<endl;
     }
     rlutil::locate(10,30);
     system("pause");
@@ -146,16 +153,16 @@ for(int j=1;j<=6;j++){
 int condicionIguales (int vectorD[6]){
 int contadorSeis;
 int dados=0;
-  for(int r=1;r<6;r++){
+  for(int r=0;r<6;r++){
    if(vectorD[r]==6){
-    contadorSeis+1; }
-
+    contadorSeis++;
+    }
   }
    if(contadorSeis==6){
    dados=1;
    }
-   else{ dados=0;}
-   return dados;}
+   return dados;
+   }
 
 //MUESTRA SI EL VALOR DE LOS DADOS ES IGUALES PERO SI EL VALOR ES DISTINTO DE SEIS
    int distintoDeSeis(int vectorD[6]){
