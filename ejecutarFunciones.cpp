@@ -13,6 +13,8 @@ int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
 int altura=rlutil::trows()/2;
 int dato=1;
+int multiplicarPuntos=0;
+int puntosLanzamiento1=0;
 while(dato!=0){
      rlutil::locate(48,5);
     cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
@@ -49,6 +51,7 @@ case 1:
     guardarNombre(nombre);
     calculoDado(vectorD);
     system("cls");
+
     if (condicionEscalera(vectorD)==1){
       rlutil::locate(60,14);
       cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
@@ -57,15 +60,21 @@ case 1:
 
     if (condicionIguales(vectorD)==1){
         rlutil::locate(60,14);
+      puntosLanzamiento1=0;
       cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
+      cout<<"SUS PUNTOS SON : "<<puntosLanzamiento1<<endl;
     }
-else if (distintoDeSeis(vectorD)==6){
+    else if (distintoDeSeis(vectorD)==6){
         rlutil::locate(60,14);
+       multiplicarPuntos=distintoDeSeis(vectorD)*10;
+       puntosLanzamiento1=multiplicarPuntos;
        cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
+       cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
         }
     else {
         rlutil::locate(60,14);
-        cout<<"LA SUMA DE SUS DADOS EN ESTA TIRADA ES :) = "<<sumaDeDados(vectorD)<<endl;
+        puntosLanzamiento1=sumaDeDados(vectorD);
+        cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
     }
     rlutil::locate(10,30);
     system("pause");
@@ -174,7 +183,7 @@ int dados=0;
  }
   return numRetorno;
    }
-
+//SUMA DE PUNTOS
 int sumaDeDados(int vectorD[6]){
 int sumaDePuntos=0;
 for (int a=0;a<6;a++){
