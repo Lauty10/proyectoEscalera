@@ -69,7 +69,7 @@ case 1:
       cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
        puntosLanzamiento1=0;
       rlutil::locate(60,16);
-      cout<<"SUS PUNTOS SON : "<<puntosLanzamiento1<<endl;
+      sumaTotal=0;
     }
     else if (distintoDeSeis(vectorD)==6){
        multiplicarPuntos=distintoDeSeis(vectorD)*10;
