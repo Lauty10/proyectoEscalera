@@ -3,6 +3,7 @@
 #include <string>
 void crearMenu(int opcion);
 std::string guardarNombre(std::string nombre);
+std::string guardarNombreDos(std::string nombre);
 void calculoDado(int vectorD[6]);
 int condicionEscalera(int vectorD[6]);
 int condicionIguales (int vectorD[6]);

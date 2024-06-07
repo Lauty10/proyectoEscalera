@@ -9,6 +9,9 @@ using namespace std;
 void crearMenu(int opcion){
 int vectorD[6];
 std::string nombre;
+std::string nombreDos;
+std::string jugador1;
+std::string jugador2;
 int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
 int altura=rlutil::trows()/2;
@@ -46,7 +49,7 @@ while(dato!=0){
     switch(opcion){
 case 1:
      system("cls");
-     guardarNombre(nombre);
+     jugador1=guardarNombre(nombre);
      system("cls");
     for(int j=1;j<=3;j++){
     for(int n=1;n<=3;n++){
@@ -105,14 +108,14 @@ case 1:
      if(sumaTotal>=100){
     system("cls");
     rlutil::locate(60,15);
-    cout<<"USTED GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal;
+    cout<<jugador1<<" GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal;
     sumaTotal=0;
     system("pause");
     system("cls");
     }else{
      system("cls");
      rlutil::locate(60,15);
-      cout<<"USTED PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+      cout<<jugador1<<" PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
       sumaTotal=0;
       rlutil::locate(10,30);
       system("pause");
@@ -121,9 +124,30 @@ case 1:
     break;
 case 2:
     system("cls");
-    cout<<"ACA OPCION 2"<<endl;
+    jugador1=guardarNombre(nombre);
+    jugador2=guardarNombreDos(nombreDos);
+    rlutil::locate(10,30);
     system("pause");
     system("cls");
+    for(int j=1;j<=4;j++){
+        int tirada=true;
+        for(int z=1;z<=6;z++){
+            if(tirada==true){
+            system("cls");
+            rlutil::locate(60,14);
+            cout<<"EL TURNO DE TIRAR ES DE: "<<jugador1;
+            rlutil::locate(10,30);
+            system("pause");
+            }else{
+            system("cls");
+            rlutil::locate(60,14);
+            cout<<"EL TURNO DE TIRAR ES DE: "<<jugador2;
+            rlutil::locate(10,30);
+            system("pause");
+            }
+        }
+    }
+
     break;
 case 3:
     system("cls");
@@ -158,6 +182,19 @@ std::string guardarNombre(std::string nombre){
   rlutil::locate(40,5);
   cin>>nombre;
   return nombre;
+}
+
+std::string guardarNombreDos(std::string nombreDos){
+  int ancho=rlutil::tcols()/2;
+  rlutil::locate(10,10);
+  cout<<"INGRESE NOMBRE DEL JUGADOR: "<<endl;
+  for(int j=1;j<120;j++){
+        rlutil::locate(j,13);
+        cout<<char(186);
+    }
+  rlutil::locate(42,10);
+  cin>>nombreDos;
+  return nombreDos;
 }
 
 void calculoDado(int vectorD[6]){
