@@ -51,7 +51,7 @@ case 1:
      system("cls");
      jugador1=guardarNombre(nombre);
      system("cls");
-    for(int j=1;j<=3;j++){
+    for(int j=1;j<=4;j++){
     for(int n=1;n<=3;n++){
     rlutil::locate(58,5);
     cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
@@ -108,8 +108,9 @@ case 1:
      if(sumaTotal>=100){
     system("cls");
     rlutil::locate(60,15);
-    cout<<jugador1<<" GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal;
+    cout<<jugador1<<" GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
     sumaTotal=0;
+    rlutil::locate(10,30);
     system("pause");
     system("cls");
     }else{
@@ -137,6 +138,7 @@ case 2:
             rlutil::locate(60,14);
             cout<<"EL TURNO DE TIRAR ES DE: "<<jugador1;
             rlutil::locate(10,30);
+
             system("pause");
             }else{
             system("cls");
