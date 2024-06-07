@@ -12,9 +12,7 @@ std::string nombre;
 int ancho=rlutil::tcols()/2;
 int alturaTotal=rlutil::trows();
 int altura=rlutil::trows()/2;
-int dato=1;
-int multiplicarPuntos=0;
-int puntosLanzamiento1=0;
+int maxNum=0,band=0,puntosLanzamiento1=0,multiplicarPuntos=0,dato=1,sumaTotal=0;
 while(dato!=0){
      rlutil::locate(48,5);
     cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
@@ -47,38 +45,63 @@ while(dato!=0){
     cin>>opcion;
     switch(opcion){
 case 1:
-    system("cls");
-    guardarNombre(nombre);
+     system("cls");
+     guardarNombre(nombre);
+     system("cls");
+    for(int j=1;j<=3;j++){
+    for(int n=1;n<=3;n++){
+    rlutil::locate(58,5);
+    cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
+      for(int j=40;j<110;j++){
+        rlutil::locate(j,7);
+         cout<<char(176);
+    }
     calculoDado(vectorD);
     system("cls");
-
     if (condicionEscalera(vectorD)==1){
       rlutil::locate(60,14);
       cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
+      rlutil::locate(1,70);
       return;
     }
-
     if (condicionIguales(vectorD)==1){
-        rlutil::locate(60,14);
-      puntosLanzamiento1=0;
+      rlutil::locate(60,14);
       cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
+       puntosLanzamiento1=0;
+      rlutil::locate(60,16);
       cout<<"SUS PUNTOS SON : "<<puntosLanzamiento1<<endl;
     }
     else if (distintoDeSeis(vectorD)==6){
-        rlutil::locate(60,14);
        multiplicarPuntos=distintoDeSeis(vectorD)*10;
        puntosLanzamiento1=multiplicarPuntos;
+        rlutil::locate(60,14);
        cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
+       rlutil::locate(60,16);
        cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
         }
     else {
-        rlutil::locate(60,14);
-        puntosLanzamiento1=sumaDeDados(vectorD);
-        cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
+    puntosLanzamiento1=sumaDeDados(vectorD);
+    rlutil::locate(60,14);
+    cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
     }
     rlutil::locate(10,30);
     system("pause");
     system("cls");
+    if(band==0){
+        maxNum=puntosLanzamiento1;
+        band=1;
+    }else if(puntosLanzamiento1>maxNum){
+     maxNum=puntosLanzamiento1;
+    }
+    } //BUCLE FOR INTERNO
+     rlutil::locate(60,15);
+    cout<<"EL MAXIMO NUMERO DE ESTA RONDA ES: "<<maxNum;
+    rlutil::locate(10,30);
+    system("pause");
+    system("cls");
+    sumaTotal+=maxNum;
+    maxNum=0;
+    } //BUCLE FOR EXTERNO
     break;
 case 2:
     system("cls");
@@ -106,12 +129,14 @@ default:
 }
 }
 
+//FUNCIONES UTILIZADAS -- FUNCIONES EJECUTADAS
+
 std::string guardarNombre(std::string nombre){
   int ancho=rlutil::tcols()/2;
   rlutil::locate(10,5);
   cout<<"INGRESE NOMBRE DEL JUGADOR: "<<endl;
   for(int j=1;j<120;j++){
-        rlutil::locate(j,7);
+        rlutil::locate(j,8);
         cout<<char(186);
     }
   rlutil::locate(40,5);
@@ -125,11 +150,10 @@ void calculoDado(int vectorD[6]){
   srand(time(NULL));
   for (int i=0; i<6;i++){
   vectorD[i]=(rand()%6)+1;
-  rlutil::locate(10,10);
+  rlutil::locate(62,13);
   cout<<"EL NUMERO DEL DADO "<< i+1 <<" ES "<<vectorD[i]<<endl;
-  for(int j=0;j<6;j++)
-  for(int j=1;j<120;j++){
-        rlutil::locate(j,12);
+  for(int j=40;j<110;j++){
+        rlutil::locate(j,15);
         cout<<char(186);
     }
    rlutil::locate(10,30);
@@ -183,7 +207,7 @@ int dados=0;
  }
   return numRetorno;
    }
-//SUMA DE PUNTOS
+
 int sumaDeDados(int vectorD[6]){
 int sumaDePuntos=0;
 for (int a=0;a<6;a++){
@@ -191,10 +215,6 @@ for (int a=0;a<6;a++){
 }
 return sumaDePuntos;
 }
-
-
-
-
 
 
 
