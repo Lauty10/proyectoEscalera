@@ -61,7 +61,7 @@ case 1:
     if (condicionEscalera(vectorD)==1){
       rlutil::locate(60,14);
       cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
-      rlutil::locate(1,70);
+      rlutil::locate(10,30);
       return;
     }
     if (condicionIguales(vectorD)==1){
@@ -102,6 +102,22 @@ case 1:
     sumaTotal+=maxNum;
     maxNum=0;
     } //BUCLE FOR EXTERNO
+     if(sumaTotal>=100){
+    system("cls");
+    rlutil::locate(60,15);
+    cout<<"USTED GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal;
+    sumaTotal=0;
+    system("pause");
+    system("cls");
+    }else{
+     system("cls");
+     rlutil::locate(60,15);
+      cout<<"USTED PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+      sumaTotal=0;
+      rlutil::locate(10,30);
+      system("pause");
+      system("cls");
+    }
     break;
 case 2:
     system("cls");
