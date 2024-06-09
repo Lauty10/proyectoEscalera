@@ -55,6 +55,8 @@ case 1:
      system("cls");
     for(int j=1;j<=4;j++){
     for(int n=1;n<=3;n++){
+     rlutil::locate(15,5);
+    cout<<nombre<<" TIRADA NUMERO: "<<n;
     rlutil::locate(58,5);
     cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
       for(int j=40;j<110;j++){
@@ -133,10 +135,12 @@ case 2:
      system("pause");
      system("cls");
     for(int j=1;j<=4;j++){
-         int tirada=true;
+         int tirada=true,tiradaUno=1,tiradoDos=1;
     for(int z=1;z<=6;z++){
     if(tirada==true){
      system("cls");
+    rlutil::locate(15,5);
+    cout<<nombre<<" TIRADA NUMERO: "<<tiradaUno;
      rlutil::locate(60,18);
      cout<<"EL TURNO DE TIRAR ES DE: "<<jugador1;
      rlutil::locate(58,5);
@@ -156,6 +160,8 @@ case 2:
     if (condicionIguales(vectorD)==1){
      rlutil::locate(60,14);
      cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
+     rlutil::locate(60,16);
+     cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador2<<endl;
      puntosLanzamiento1=0;
      rlutil::locate(60,16);
      sumaTotal=0;
@@ -167,11 +173,15 @@ case 2:
      cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
      rlutil::locate(60,16);
      cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
+     rlutil::locate(60,18);
+     cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador2<<endl;
     }
     else {
      puntosLanzamiento1=sumaDeDados(vectorD);
      rlutil::locate(60,14);
      cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
+     rlutil::locate(60,16);
+     cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador2<<endl;
    }
     if(band==0){
      maxNum=puntosLanzamiento1;
@@ -185,9 +195,11 @@ case 2:
     system("cls");
     rlutil::locate(10,30);
     tirada=false;
-}
-   else{
+    tiradaUno++;
+}else{
     system("cls");
+     rlutil::locate(15,5);
+    cout<<nombre<<" TIRADA NUMERO: "<<tiradoDos;
     rlutil::locate(60,18);
     cout<<"EL TURNO DE TIRAR ES DE: "<<jugador2;
     rlutil::locate(58,5);
@@ -207,6 +219,8 @@ case 2:
    if (condicionIguales(vectorD)==1){
     rlutil::locate(60,14);
     cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
+    rlutil::locate(60,16);
+    cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador1<<endl;
     puntosLanzamiento2=0;
     rlutil::locate(60,16);
     sumaTotal=0;
@@ -218,11 +232,15 @@ case 2:
     cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
     rlutil::locate(60,16);
     cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento2<<endl;
+    rlutil::locate(60,18);
+    cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador1<<endl;
     }
    else {
     puntosLanzamiento2=sumaDeDados(vectorD);
     rlutil::locate(60,14);
     cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento2<<endl;
+    rlutil::locate(60,16);
+    cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador1<<endl;
     }
    if(band1==0){
     maxNum2=puntosLanzamiento2;
@@ -236,7 +254,7 @@ case 2:
     system("cls");
     rlutil::locate(10,30);
     tirada=true;
-
+     tiradoDos++;
    if(puntosLanzamiento1>puntosLanzamiento2){
     rlutil::locate(60,15);
     cout<<"EL PUNTAJE DE " <<jugador1<< " ES MAYOR EN ESTE LANZAMIENTO"<<endl;
