@@ -125,13 +125,6 @@ case 1:
       system("cls");
     }
     break;
-
-
-
-
-
-
-
 case 2:
      system("cls");
      jugador1=guardarNombre(nombre);
@@ -144,8 +137,14 @@ case 2:
     for(int z=1;z<=6;z++){
     if(tirada==true){
      system("cls");
-     rlutil::locate(60,14);
+     rlutil::locate(60,18);
      cout<<"EL TURNO DE TIRAR ES DE: "<<jugador1;
+     rlutil::locate(58,5);
+    cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
+      for(int j=40;j<110;j++){
+        rlutil::locate(j,7);
+         cout<<char(176);
+    }
      calculoDado(vectorD);
      system("cls");
     if (condicionEscalera(vectorD)==1){
@@ -186,15 +185,17 @@ case 2:
     system("cls");
     rlutil::locate(10,30);
     tirada=false;
-    system("pause");
 }
-
-
-
    else{
     system("cls");
-    rlutil::locate(60,14);
+    rlutil::locate(60,18);
     cout<<"EL TURNO DE TIRAR ES DE: "<<jugador2;
+    rlutil::locate(58,5);
+    cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
+      for(int j=40;j<110;j++){
+        rlutil::locate(j,7);
+         cout<<char(176);
+    }
     calculoDado(vectorD);
     system("cls");
    if (condicionEscalera(vectorD)==1){
@@ -230,53 +231,64 @@ case 2:
    else if(puntosLanzamiento2>maxNum2){
     maxNum2=puntosLanzamiento2;
     }
-
     rlutil::locate(10,30);
     system("pause");
     system("cls");
-
     rlutil::locate(10,30);
     tirada=true;
 
    if(puntosLanzamiento1>puntosLanzamiento2){
+    rlutil::locate(60,15);
     cout<<"EL PUNTAJE DE " <<jugador1<< " ES MAYOR EN ESTE LANZAMIENTO"<<endl;
     }
    else {
+    rlutil::locate(60,15);
     cout<<"EL PUNTAJE DE " <<jugador2<< " ES MAYOR EN ESTE LANZAMIENTO"<<endl;
     }
+    rlutil::locate(10,30);
     system("pause");
+    system("cls");
     }
-
-
     }
 //FOR INTERNO
-   if(maxNum>maxNum2){
-    cout<<"EL PUNTAJE DE "<<jugador1<< " ES MAYOR EN ESTA RONDA. Y SUS PUNTOS SON : "<<maxNum<<endl;}
-    else {
-    cout<<"EL PUNTAJE DE " <<jugador2<< " ES MAYOR EN ESTE RONDA. Y SUS PUNTOS SON : "<<maxNum2<<endl;}
-    sumaTotal2=sumaTotal2+maxNum2;
-    sumaTotal1=sumaTotal1+maxNum;
+   if(true){
+    rlutil::locate(60,15);
+    cout<<"EL PUNTAJE MAS ALTO DE "<<jugador1<< " ES EN ESTA RONDA"<<endl;
+    rlutil::locate(60,17);
+    cout<<"SON: "<<maxNum;
+    rlutil::locate(10,30);
     system("pause");
+    system("cls");
+    rlutil::locate(60,15);
+    cout<<"EL PUNTAJE MAS ALTO DE "<<jugador2<< " ES EN ESTA RONDA"<<endl;
+    rlutil::locate(60,17);
+    cout<<"SON: "<<maxNum2;
+    rlutil::locate(10,30);
+    system("pause");
+    system("cls");
+    }
+    sumaTotal2+=maxNum2;
+    sumaTotal1+=maxNum;
+    maxNum=0;
+    maxNum2=0;
     }
  //FOR EXTERNO
    if(sumaTotal1>sumaTotal2){
+    rlutil::locate(60,15);
    cout<< "EL GANADOR DE ESTA PARTIDA ES "<<jugador1<< " SUS PUNTOS SON: "<<sumaTotal1<<endl;
+    rlutil::locate(60,17);
    cout<< jugador2<< " PERDISTE ESTA PARTIDA CON "<<sumaTotal2<<" PUNTOS. "<<endl;
     }
    else {
+    rlutil::locate(60,15);
     cout<<"EL GANADOR DE ESTA PARTIDA ES "<<jugador2<< " SUS PUNTOS SON: "<<sumaTotal2<<endl;
-     cout<< jugador1<< " PERDISTE ESTA PARTIDA CON "<<sumaTotal1<<" PUNTOS. "<<endl;
+     rlutil::locate(60,17);
+    cout<< jugador1<< " PERDISTE ESTA PARTIDA CON "<<sumaTotal1<<" PUNTOS. "<<endl;
    }
+    rlutil::locate(10,30);
     system("pause");
-
-
+    system("cls");
     break;
-
-
-
-
-
-
 case 3:
     system("cls");
     cout<<"ACA OPCION 3"<<endl;
