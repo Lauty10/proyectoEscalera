@@ -8,6 +8,7 @@ using namespace std;
 
 void crearMenu(int opcion){
 int vectorD[6];
+int VectorV[6];
 std::string nombre;
 std::string nombreDos;
 std::string jugador1;
@@ -352,6 +353,74 @@ case 3:
     system("pause");
     system("cls");
     break;
+
+    //MODO SIMULADO
+case 4:
+     system("cls");
+     jugador1=guardarNombre(nombre);
+     system("cls");
+    for(int j=1;j<=4;j++){
+    for(int n=1;n<=3;n++){
+    cout<<nombre<<" TIRADA NUMERO: "<<n;
+    cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
+    cout<<"ACUMULADO TOTAL: "<<sumaTotal;
+    cargarDado(VectorV);
+    system("cls");
+    if (condicionEscalera(VectorV)==1){
+      cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
+      return;
+    }
+    if (condicionIguales(VectorV)==1){
+      cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
+       puntosLanzamiento1=0;
+      sumaTotal=0;
+    }
+    else if (distintoDeSeisS(VectorV)==6){
+       multiplicarPuntos=distintoDeSeisS(VectorV)*10;
+       puntosLanzamiento1=multiplicarPuntos;
+       cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
+       cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
+        }
+    else {
+    puntosLanzamiento1=sumaDeDados(VectorV);
+    cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
+    }
+    system("pause");
+    system("cls");
+    if(band==0){
+        maxNum=puntosLanzamiento1;
+        band=1;
+    }else if(puntosLanzamiento1>maxNum){
+     maxNum=puntosLanzamiento1;
+    }
+    }
+    cout<<"EL MAXIMO NUMERO DE ESTA RONDA ES: "<<maxNum;
+    system("pause");
+    system("cls");
+    sumaTotal+=maxNum;
+    maxNum=0;
+    }
+     if(sumaTotal>=100){
+    system("cls");
+    cout<<jugador1<<" GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+    system("pause");
+    system("cls");
+    }else{
+     system("cls");
+      cout<<jugador1<<" PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+      system("pause");
+      system("cls");
+    }
+    if(bandPuntaje=0){
+        maxPuntaje=sumaTotal;
+        bandPuntaje=1;
+    }else if(sumaTotal>maxPuntaje){
+    maxPuntaje=sumaTotal;
+    }
+    sumaTotal=0;
+
+    break;
+
 case 0:
     system("cls");
     dato=0;
@@ -464,7 +533,36 @@ return sumaDePuntos;
 }
 
 
+//MODO SIMULADO
+void cargarDado (int VectorV [6]){
+  int valor=0;
+  for (int i=0; i<6;i++){
+  rlutil::locate(62,13);
+  cout<<"INGRESE EL VALOR DEL DADO "<<i+1<<endl;
+  cin>>valor;
+  VectorV[i]=valor;
+  cout<<"EL NUMERO DEL DADO "<< i+1 <<" ES "<<VectorV[i]<<endl;
+  for(int j=40;j<110;j++){
+}
+}
+}
 
-
-
-
+int distintoDeSeisS(int VectorV[6]){
+   int contadorDistintos;
+   int distinto=0;
+   int bandera=0;
+   int numRetorno=0;
+   for( int m=0; m<6;m++){
+    if(bandera==0 && VectorV[m]!=6){
+       distinto=VectorV[m];
+       contadorDistintos++;
+       bandera+1;
+       }else if(VectorV[m]==distinto&&VectorV[m]!=6){
+       contadorDistintos++;
+       }
+ }
+ if(contadorDistintos==6){
+    numRetorno=distinto;
+ }
+  return numRetorno;
+   }
