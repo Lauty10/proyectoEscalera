@@ -295,7 +295,6 @@ case 2:
 
 case 3:
     system("cls");
-    cout<<"ACA OPCION 3"<<endl;
     if(sumaTotal1>sumaTotal2){
         mayorPuntaje=sumaTotal1;
         cout<<"EL MAYOR PUNTAJE ES DE: "<<jugador1<<" Y SUS PUNTOS SON : "<<mayorPuntaje<<endl;
