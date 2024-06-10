@@ -141,7 +141,7 @@ case 2:
      system("cls");
     rlutil::locate(15,5);
     cout<<nombre<<" TIRADA NUMERO: "<<tiradaUno;
-     rlutil::locate(60,18);
+     rlutil::locate(60,20);
      cout<<"EL TURNO DE TIRAR ES DE: "<<jugador1;
      rlutil::locate(58,5);
     cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
@@ -200,7 +200,7 @@ case 2:
     system("cls");
      rlutil::locate(15,5);
     cout<<nombre<<" TIRADA NUMERO: "<<tiradoDos;
-    rlutil::locate(60,18);
+    rlutil::locate(60,20);
     cout<<"EL TURNO DE TIRAR ES DE: "<<jugador2;
     rlutil::locate(58,5);
     cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
@@ -309,7 +309,9 @@ case 2:
     break;
 case 3:
     system("cls");
-    cout<<"ACA OPCION 3"<<endl;
+    rlutil::locate(60,15);
+    cout<<"La puntuacion mas alta es: " <<endl;
+    rlutil::locate(10,30);
     system("pause");
     system("cls");
     break;
@@ -326,35 +328,32 @@ default:
 }
 }
 }
-
 //FUNCIONES UTILIZADAS -- FUNCIONES EJECUTADAS
 
 std::string guardarNombre(std::string nombre){
   int ancho=rlutil::tcols()/2;
-  rlutil::locate(10,5);
+  rlutil::locate(60,10);
   cout<<"INGRESE NOMBRE DEL JUGADOR: "<<endl;
-  for(int j=1;j<120;j++){
-        rlutil::locate(j,8);
-        cout<<char(186);
+  for(int j=20;j<120;j++){
+        rlutil::locate(j,12);
+        cout<<char(178);
     }
-  rlutil::locate(40,5);
+  rlutil::locate(88,10);
   cin>>nombre;
   return nombre;
 }
-
 std::string guardarNombreDos(std::string nombreDos){
   int ancho=rlutil::tcols()/2;
-  rlutil::locate(10,10);
+  rlutil::locate(60,15);
   cout<<"INGRESE NOMBRE DEL JUGADOR: "<<endl;
-  for(int j=1;j<120;j++){
-        rlutil::locate(j,13);
-        cout<<char(186);
+  for(int j=20;j<120;j++){
+        rlutil::locate(j,17);
+        cout<<char(176);
     }
-  rlutil::locate(42,10);
+  rlutil::locate(88,15);
   cin>>nombreDos;
   return nombreDos;
 }
-
 void calculoDado(int vectorD[6]){
   int puntos=0;
 
