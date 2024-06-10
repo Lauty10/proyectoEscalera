@@ -46,9 +46,11 @@ while(dato!=0){
     cout<<"2-)INICIAR JUEGO PARA DOS JUGADORES"<<endl;
     rlutil::locate(ancho,altura+4);
     cout<<"3-)MOSTRAR PUNTUACION MAS ALTA"<<endl;
-    rlutil::locate(ancho,altura+6);
-    cout<<"0-)SALIR DEL JUEGO"<<endl;
+     rlutil::locate(ancho,altura+6);
+    cout<<"4-)MODO SIMULADO"<<endl;
     rlutil::locate(ancho,altura+8);
+    cout<<"0-)SALIR DEL JUEGO"<<endl;
+    rlutil::locate(ancho,altura+10);
     cout<<"INGRESAR OPCION ELEGIDA: ";
     cin>>opcion;
     switch(opcion){
@@ -71,29 +73,28 @@ case 1:
     calculoDado(vectorD);
     system("cls");
     if (condicionEscalera(vectorD)==1){
-      rlutil::locate(60,14);
+      rlutil::locate(58,14);
       cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
       rlutil::locate(10,30);
       return;
     }
     if (condicionIguales(vectorD)==1){
-      rlutil::locate(60,14);
+       rlutil::locate(58,14);
       cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
        puntosLanzamiento1=0;
-      rlutil::locate(60,16);
-      sumaTotal=0;
+       sumaTotal=0;
     }
     else if (distintoDeSeis(vectorD)==6){
        multiplicarPuntos=distintoDeSeis(vectorD)*10;
        puntosLanzamiento1=multiplicarPuntos;
-        rlutil::locate(60,14);
+        rlutil::locate(58,14);
        cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
-       rlutil::locate(60,16);
+        rlutil::locate(58,14);
        cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
         }
     else {
     puntosLanzamiento1=sumaDeDados(vectorD);
-    rlutil::locate(60,14);
+     rlutil::locate(58,14);
     cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
     }
     rlutil::locate(10,30);
@@ -106,7 +107,7 @@ case 1:
      maxNum=puntosLanzamiento1;
     }
     }
-     rlutil::locate(60,15);
+    rlutil::locate(58,14);
     cout<<"EL MAXIMO NUMERO DE ESTA RONDA ES: "<<maxNum;
     rlutil::locate(10,30);
     system("pause");
@@ -116,14 +117,14 @@ case 1:
     }
      if(sumaTotal>=100){
     system("cls");
-    rlutil::locate(60,15);
+    rlutil::locate(58,14);
     cout<<jugador1<<" GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
     rlutil::locate(10,30);
     system("pause");
     system("cls");
     }else{
      system("cls");
-     rlutil::locate(60,15);
+     rlutil::locate(58,14);
       cout<<jugador1<<" PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
       rlutil::locate(10,30);
       system("pause");
@@ -145,7 +146,7 @@ case 2:
      system("pause");
      system("cls");
     for(int j=1;j<=4;j++){
-         int tirada=true,tiradaUno=1,tiradoDos=1;
+    int tirada=true,tiradaUno=1,tiradoDos=1;
     for(int z=1;z<=6;z++){
     if(tirada==true){
      system("cls");
@@ -153,7 +154,7 @@ case 2:
     cout<<nombre<<" TIRADA NUMERO: "<<tiradaUno;
      rlutil::locate(60,20);
      cout<<"EL TURNO DE TIRAR ES DE: "<<jugador1;
-     rlutil::locate(58,5);
+     rlutil::locate(58,14);
     cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
       for(int j=40;j<110;j++){
         rlutil::locate(j,7);
@@ -164,36 +165,35 @@ case 2:
      calculoDado(vectorD);
      system("cls");
     if (condicionEscalera(vectorD)==1){
-     rlutil::locate(60,14);
+      rlutil::locate(58,14);
      cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
      rlutil::locate(10,30);
       return;
     }
     if (condicionIguales(vectorD)==1){
-     rlutil::locate(60,14);
+     rlutil::locate(58,14);
      cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
-
-     rlutil::locate(60,16);
+     rlutil::locate(58,14);
      cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador2<<endl;
      puntosLanzamiento1=0;
      rlutil::locate(60,16);
-     sumaTotal=0;
+     sumaTotal1=0;
     }
     else if (distintoDeSeis(vectorD)==6){
      multiplicarPuntos=distintoDeSeis(vectorD)*10;
      puntosLanzamiento1=multiplicarPuntos;
-     rlutil::locate(60,14);
+     rlutil::locate(58,14);
      cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
-     rlutil::locate(60,16);
+     rlutil::locate(58,14);
      cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
-     rlutil::locate(60,18);
+    rlutil::locate(58,14);
      cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador2<<endl;
     }
     else {
      puntosLanzamiento1=sumaDeDados(vectorD);
-     rlutil::locate(60,14);
+     rlutil::locate(58,14);
      cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
-     rlutil::locate(60,16);
+    rlutil::locate(58,14);;
      cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador2<<endl;
    }
     if(band==0){
@@ -226,35 +226,35 @@ case 2:
     calculoDado(vectorD);
     system("cls");
    if (condicionEscalera(vectorD)==1){
-    rlutil::locate(60,14);
+    rlutil::locate(58,14);
     cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
     rlutil::locate(10,30);
       return;
       }
    if (condicionIguales(vectorD)==1){
-    rlutil::locate(60,14);
+    rlutil::locate(58,14);
     cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
-    rlutil::locate(60,16);
+     rlutil::locate(58,16);
     cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador1<<endl;
     puntosLanzamiento2=0;
     rlutil::locate(60,16);
-    sumaTotal=0;
+    sumaTotal2=0;
     }
    else if (distintoDeSeis(vectorD)==6){
     multiplicarPuntos=distintoDeSeis(vectorD)*10;
     puntosLanzamiento2=multiplicarPuntos;
-    rlutil::locate(60,14);
+      rlutil::locate(58,14);
     cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
-    rlutil::locate(60,16);
+      rlutil::locate(58,14);
     cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento2<<endl;
-    rlutil::locate(60,18);
+      rlutil::locate(58,18);
     cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador1<<endl;
     }
    else {
     puntosLanzamiento2=sumaDeDados(vectorD);
-    rlutil::locate(60,14);
+      rlutil::locate(58,14);
     cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento2<<endl;
-    rlutil::locate(60,16);
+     rlutil::locate(58,16);
     cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador1<<endl;
     }
    if(band1==0){
@@ -271,11 +271,11 @@ case 2:
     tirada=true;
      tiradoDos++;
    if(puntosLanzamiento1>puntosLanzamiento2){
-    rlutil::locate(60,15);
+    rlutil::locate(58,15);
     cout<<"EL PUNTAJE DE " <<jugador1<< " ES MAYOR EN ESTE LANZAMIENTO"<<endl;
     }
    else {
-    rlutil::locate(60,15);
+      rlutil::locate(58,15);
     cout<<"EL PUNTAJE DE " <<jugador2<< " ES MAYOR EN ESTE LANZAMIENTO"<<endl;
     }
     rlutil::locate(10,30);
@@ -283,18 +283,17 @@ case 2:
     system("cls");
     }
     }
-//FOR INTERNO
    if(true){
-    rlutil::locate(60,15);
+    rlutil::locate(58,15);
     cout<<"EL PUNTAJE MAS ALTO DE "<<jugador1<< " ES EN ESTA RONDA"<<endl;
-    rlutil::locate(60,17);
+    rlutil::locate(58,17);
     cout<<"SON: "<<maxNum;
     rlutil::locate(10,30);
     system("pause");
     system("cls");
-    rlutil::locate(60,15);
+    rlutil::locate(58,15);
     cout<<"EL PUNTAJE MAS ALTO DE "<<jugador2<< " ES EN ESTA RONDA"<<endl;
-    rlutil::locate(60,17);
+    rlutil::locate(58,17);
     cout<<"SON: "<<maxNum2;
     rlutil::locate(10,30);
     system("pause");
@@ -306,27 +305,27 @@ case 2:
     maxNum2=0;
     }
    if(sumaTotal1>sumaTotal2){
-    rlutil::locate(60,15);
+    rlutil::locate(58,15);
    cout<< "EL GANADOR DE ESTA PARTIDA ES "<<jugador1<< " SUS PUNTOS SON: "<<sumaTotal1<<endl;
-    rlutil::locate(60,17);
+    rlutil::locate(58,17);
    cout<< jugador2<< " PERDISTE ESTA PARTIDA CON "<<sumaTotal2<<" PUNTOS. "<<endl;
     }
    else {
-    rlutil::locate(60,15);
+    rlutil::locate(58,15);
     cout<<"EL GANADOR DE ESTA PARTIDA ES "<<jugador2<< " SUS PUNTOS SON: "<<sumaTotal2<<endl;
-     rlutil::locate(60,17);
-    cout<< jugador1<< " PERDISTE ESTA PARTIDA CON "<<sumaTotal1<<" PUNTOS. "<<endl;
+     rlutil::locate(58,17);
+    cout<< jugador1<< "PERDISTE ESTA PARTIDA CON "<<sumaTotal1<<" PUNTOS. "<<endl;
    }
     if(bandPuntajeDos=0){
          bandPuntajeDos=1;
         if(sumaTotal1>sumaTotal2){
-            maxPuntajeDos=sumaTotal1;
+         maxPuntajeDos=sumaTotal1;
         }else{
          maxPuntajeDos=sumaTotal2;
         }
-    }else if(sumaTotal1>maxPuntajeDos){
+    }else if(sumaTotal1>maxPuntajeDos && sumaTotal1>sumaTotal2){
         maxPuntajeDos=sumaTotal1;
-    }else if(sumaTotal2>maxPuntajeDos){
+    }else if(sumaTotal2>maxPuntajeDos && sumaTotal2>sumaTotal1){
         maxPuntajeDos=sumaTotal2;
     }
     sumaTotal1=0;
@@ -353,38 +352,50 @@ case 3:
     system("pause");
     system("cls");
     break;
-
     //MODO SIMULADO
 case 4:
-     system("cls");
+    system("cls");
      jugador1=guardarNombre(nombre);
      system("cls");
     for(int j=1;j<=4;j++){
     for(int n=1;n<=3;n++){
+     rlutil::locate(15,5);
     cout<<nombre<<" TIRADA NUMERO: "<<n;
+    rlutil::locate(58,5);
     cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
-    cout<<"ACUMULADO TOTAL: "<<sumaTotal;
-    cargarDado(VectorV);
+      for(int j=40;j<110;j++){
+        rlutil::locate(j,7);
+         cout<<char(176);
+    }
+    cargarDado(vectorD);
     system("cls");
-    if (condicionEscalera(VectorV)==1){
+    if (condicionEscalera(vectorD)==1){
+      rlutil::locate(58,14);
       cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
+      rlutil::locate(10,30);
       return;
     }
-    if (condicionIguales(VectorV)==1){
+    if (condicionIguales(vectorD)==1){
+      rlutil::locate(50,14);
       cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
        puntosLanzamiento1=0;
+      rlutil::locate(60,16);
       sumaTotal=0;
     }
-    else if (distintoDeSeisS(VectorV)==6){
-       multiplicarPuntos=distintoDeSeisS(VectorV)*10;
+    else if (distintoDeSeis(vectorD)==6){
+       multiplicarPuntos=distintoDeSeis(vectorD)*10;
        puntosLanzamiento1=multiplicarPuntos;
+        rlutil::locate(58,14);
        cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
+       rlutil::locate(58,16);
        cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
         }
     else {
-    puntosLanzamiento1=sumaDeDados(VectorV);
+    puntosLanzamiento1=sumaDeDados(vectorD);
+    rlutil::locate(58,14);
     cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
     }
+    rlutil::locate(10,30);
     system("pause");
     system("cls");
     if(band==0){
@@ -394,7 +405,9 @@ case 4:
      maxNum=puntosLanzamiento1;
     }
     }
+     rlutil::locate(60,15);
     cout<<"EL MAXIMO NUMERO DE ESTA RONDA ES: "<<maxNum;
+    rlutil::locate(10,30);
     system("pause");
     system("cls");
     sumaTotal+=maxNum;
@@ -402,25 +415,20 @@ case 4:
     }
      if(sumaTotal>=100){
     system("cls");
-    cout<<jugador1<<" GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+    rlutil::locate(58,15);
+    cout<<jugador1<<"GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+    rlutil::locate(10,30);
     system("pause");
     system("cls");
     }else{
      system("cls");
-      cout<<jugador1<<" PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+     rlutil::locate(58,15);
+      cout<<jugador1<<"PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
+      rlutil::locate(10,30);
       system("pause");
       system("cls");
     }
-    if(bandPuntaje=0){
-        maxPuntaje=sumaTotal;
-        bandPuntaje=1;
-    }else if(sumaTotal>maxPuntaje){
-    maxPuntaje=sumaTotal;
-    }
-    sumaTotal=0;
-
     break;
-
 case 0:
     system("cls");
     dato=0;
@@ -491,6 +499,7 @@ for(int j=1;j<=6;j++){
 }
   return trueEscalera;
 }
+
 int condicionIguales (int vectorD[6]){
 int contadorSeis;
 int dados=0;
@@ -504,6 +513,7 @@ int dados=0;
    }
    return dados;
    }
+
    int distintoDeSeis(int vectorD[6]){
    int contadorDistintos;
    int distinto=0;
@@ -532,37 +542,19 @@ for (int a=0;a<6;a++){
 return sumaDePuntos;
 }
 
-
-//MODO SIMULADO
 void cargarDado (int VectorV [6]){
   int valor=0;
   for (int i=0; i<6;i++){
-  rlutil::locate(62,13);
-  cout<<"INGRESE EL VALOR DEL DADO "<<i+1<<endl;
+  rlutil::locate(64,14);
+  cout<<"INGRESE EL VALOR DEL DADO: "<<i+1<<endl;
+   rlutil::locate(64,16);
+  cout<<"EL VALOR DEL DADO ES: ";
+  rlutil::locate(85,16);
   cin>>valor;
   VectorV[i]=valor;
+  rlutil::locate(64,18);
   cout<<"EL NUMERO DEL DADO "<< i+1 <<" ES "<<VectorV[i]<<endl;
-  for(int j=40;j<110;j++){
-}
+  rlutil::locate(10,30);
 }
 }
 
-int distintoDeSeisS(int VectorV[6]){
-   int contadorDistintos;
-   int distinto=0;
-   int bandera=0;
-   int numRetorno=0;
-   for( int m=0; m<6;m++){
-    if(bandera==0 && VectorV[m]!=6){
-       distinto=VectorV[m];
-       contadorDistintos++;
-       bandera+1;
-       }else if(VectorV[m]==distinto&&VectorV[m]!=6){
-       contadorDistintos++;
-       }
- }
- if(contadorDistintos==6){
-    numRetorno=distinto;
- }
-  return numRetorno;
-   }
