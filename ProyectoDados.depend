@@ -34,7 +34,7 @@
 
 1717537325 D
 
-1717859857 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
+1718058119 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\ejecutarfunciones.cpp
 	<iostream>
 	"declararFunciones.h"
 	"rlutil.h"
@@ -57,7 +57,7 @@
 	<cstdlib>
 	<ctime>
 
-1717806003 c:\users\estudiante\onedrive\escritorio\proyectoescalera\declararfunciones.h
+1718058119 c:\users\estudiante\onedrive\escritorio\proyectoescalera\declararfunciones.h
 	<string>
 
 1717806003 c:\users\estudiante\onedrive\escritorio\proyectoescalera\rlutil.h
@@ -74,7 +74,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1717806003 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\main.cpp
+1718056891 source:c:\users\estudiante\onedrive\escritorio\proyectoescalera\main.cpp
 	<iostream>
 	<string>
 	"declararFunciones.h"

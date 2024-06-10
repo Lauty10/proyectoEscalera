@@ -9,4 +9,6 @@ int condicionEscalera(int vectorD[6]);
 int condicionIguales (int vectorD[6]);
 int distintoDeSeis (int vectorD [6]);
 int sumaDeDados(int vectorD[6]);
+void cargarDado (int VectorV [6]);
+int distintoDeSeisS(int VectorV[6]);
 #endif // DECLARARFUNCIONES_H_INCLUDED
