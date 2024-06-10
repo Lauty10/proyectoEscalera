@@ -63,6 +63,8 @@ case 1:
         rlutil::locate(j,7);
          cout<<char(176);
     }
+    rlutil::locate(70,20);
+    cout<<"ACUMULADO TOTAL: "<<sumaTotal;
     calculoDado(vectorD);
     system("cls");
     if (condicionEscalera(vectorD)==1){
@@ -100,7 +102,7 @@ case 1:
     }else if(puntosLanzamiento1>maxNum){
      maxNum=puntosLanzamiento1;
     }
-    } //BUCLE FOR INTERNO
+    }
      rlutil::locate(60,15);
     cout<<"EL MAXIMO NUMERO DE ESTA RONDA ES: "<<maxNum;
     rlutil::locate(10,30);
@@ -149,6 +151,8 @@ case 2:
         rlutil::locate(j,7);
          cout<<char(176);
     }
+    rlutil::locate(65,25);
+    cout<<"ACUMULADO TOTAL: "<<sumaTotal1;
      calculoDado(vectorD);
      system("cls");
     if (condicionEscalera(vectorD)==1){
@@ -208,6 +212,8 @@ case 2:
         rlutil::locate(j,7);
          cout<<char(176);
     }
+    rlutil::locate(65,25);
+    cout<<"ACUMULADO TOTAL: "<<sumaTotal2;
     calculoDado(vectorD);
     system("cls");
    if (condicionEscalera(vectorD)==1){
