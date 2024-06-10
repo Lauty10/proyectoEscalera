@@ -18,6 +18,8 @@ int altura=rlutil::trows()/2;
 int maxNum=0,band=0,puntosLanzamiento1=0,multiplicarPuntos=0,dato=1,sumaTotal=0;
 int puntosLanzamiento2=0, maxNum2=0,band1=0;
 int acumuladorpuntos1=0, acumuladorpuntos2=0, sumaTotal2=0,sumaTotal1=0;
+int maxPuntaje=0,bandPuntaje=0;
+int maxPuntajeDos=0,bandPuntajeDos=0;
 while(dato!=0){
      rlutil::locate(48,5);
     cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
@@ -110,12 +112,11 @@ case 1:
     system("cls");
     sumaTotal+=maxNum;
     maxNum=0;
-    } //BUCLE FOR EXTERNO
+    }
      if(sumaTotal>=100){
     system("cls");
     rlutil::locate(60,15);
     cout<<jugador1<<" GANO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
-    sumaTotal=0;
     rlutil::locate(10,30);
     system("pause");
     system("cls");
@@ -123,11 +124,17 @@ case 1:
      system("cls");
      rlutil::locate(60,15);
       cout<<jugador1<<" PERDIO LA PARTIDA CON ESTOS PUNTOS: "<<sumaTotal<<endl;
-      sumaTotal=0;
       rlutil::locate(10,30);
       system("pause");
       system("cls");
     }
+    if(bandPuntaje=0){
+        maxPuntaje=sumaTotal;
+        bandPuntaje=1;
+    }else if(sumaTotal>maxPuntaje){
+    maxPuntaje=sumaTotal;
+    }
+    sumaTotal=0;
     break;
 case 2:
      system("cls");
@@ -164,6 +171,7 @@ case 2:
     if (condicionIguales(vectorD)==1){
      rlutil::locate(60,14);
      cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
+
      rlutil::locate(60,16);
      cout<<"PROXIMO JUGADOR EN TIRAR = "<<jugador2<<endl;
      puntosLanzamiento1=0;
@@ -296,7 +304,6 @@ case 2:
     maxNum=0;
     maxNum2=0;
     }
- //FOR EXTERNO
    if(sumaTotal1>sumaTotal2){
     rlutil::locate(60,15);
    cout<< "EL GANADOR DE ESTA PARTIDA ES "<<jugador1<< " SUS PUNTOS SON: "<<sumaTotal1<<endl;
@@ -309,14 +316,38 @@ case 2:
      rlutil::locate(60,17);
     cout<< jugador1<< " PERDISTE ESTA PARTIDA CON "<<sumaTotal1<<" PUNTOS. "<<endl;
    }
+    if(bandPuntajeDos=0){
+         bandPuntajeDos=1;
+        if(sumaTotal1>sumaTotal2){
+            maxPuntajeDos=sumaTotal1;
+        }else{
+         maxPuntajeDos=sumaTotal2;
+        }
+    }else if(sumaTotal1>maxPuntajeDos){
+        maxPuntajeDos=sumaTotal1;
+    }else if(sumaTotal2>maxPuntajeDos){
+        maxPuntajeDos=sumaTotal2;
+    }
+    sumaTotal1=0;
+    sumaTotal2=0;
     rlutil::locate(10,30);
     system("pause");
     system("cls");
     break;
 case 3:
     system("cls");
-    rlutil::locate(60,15);
-    cout<<"La puntuacion mas alta es: " <<endl;
+    if(true){
+    rlutil::locate(50,10);
+    cout<<"EL PUNTAJE MAS ALTO OBTENIDO PARA MODO UN JUGADOR ES: "<<maxPuntaje<<endl;
+    }
+    for(int j=1;j<149;j++){
+        rlutil::locate(j,15);
+         cout<<char(205);;
+    }
+    if(true){
+    rlutil::locate(50,20);
+    cout<<"EL PUNTAJE MAS ALTO OBTENIDO PARA MODO DOS JUGADORES ES: "<<maxPuntajeDos<<endl;
+    }
     rlutil::locate(10,30);
     system("pause");
     system("cls");
