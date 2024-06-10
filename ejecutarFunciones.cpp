@@ -18,6 +18,8 @@ int altura=rlutil::trows()/2;
 int maxNum=0,band=0,puntosLanzamiento1=0,multiplicarPuntos=0,dato=1,sumaTotal=0;
 int puntosLanzamiento2=0, maxNum2=0,band1=0;
 int acumuladorpuntos1=0, acumuladorpuntos2=0, sumaTotal2=0,sumaTotal1=0;
+int mayorPuntaje=0;
+
 while(dato!=0){
      rlutil::locate(48,5);
     cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
@@ -289,9 +291,20 @@ case 2:
     system("pause");
     system("cls");
     break;
+
+
 case 3:
     system("cls");
     cout<<"ACA OPCION 3"<<endl;
+    if(sumaTotal1>sumaTotal2){
+        mayorPuntaje=sumaTotal1;
+        cout<<"EL MAYOR PUNTAJE ES DE: "<<jugador1<<" Y SUS PUNTOS SON : "<<mayorPuntaje<<endl;
+    } else{
+    mayorPuntaje=sumaTotal2;
+    cout<<"EL MAYOR PUNTAJE ES DE: "<<jugador2<<" Y SUS PUNTOS SON: "<<mayorPuntaje<<endl;
+    }
+
+
     system("pause");
     system("cls");
     break;
