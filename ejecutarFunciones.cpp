@@ -6,8 +6,7 @@
 #include<ctime>
 using namespace std;
 
-void crearMenu(int opcion)
-{
+void crearMenu(int opcion){
     int vectorD[6];
     int VectorV[6];
     std::string nombre;
@@ -26,20 +25,17 @@ void crearMenu(int opcion)
     {
         rlutil::locate(48,5);
         cout<<"BIENVENIDO A ESCALERA ESPERAMOS QUE DISFRUTES EL JUEGO";
-        for(int j=41; j<110; j++)
-        {
+        for(int j=41; j<110; j++){
             rlutil::locate(j,7);
             cout<<char(176);
         }
-        for(int j=41; j<110; j++)
-        {
+        for(int j=41; j<110; j++){
             rlutil::locate(j,12);
             cout<<"-";
             rlutil::locate(j,27);
             cout<<"-";
         }
-        for(int j=13; j<27; j++)
-        {
+        for(int j=13; j<27; j++){
             rlutil::locate(40,j);
             cout<<char(221);
             rlutil::locate(110,j);
@@ -86,6 +82,7 @@ void crearMenu(int opcion)
     }
 }
 //FUNCIONES UTILIZADAS -- FUNCIONES EJECUTADAS
+//NOMBRE GUARDADO
 std::string guardarNombre(std::string nombre)
 {
     int ancho=rlutil::tcols()/2;
@@ -100,6 +97,7 @@ std::string guardarNombre(std::string nombre)
     cin>>nombre;
     return nombre;
 }
+//GUARDAR SEGUNDO NOMBRE
 std::string guardarNombreDos(std::string nombreDos)
 {
     int ancho=rlutil::tcols()/2;
@@ -114,6 +112,7 @@ std::string guardarNombreDos(std::string nombreDos)
     cin>>nombreDos;
     return nombreDos;
 }
+//CALCULO DE DADO
 void calculoDado(int vectorD[6])
 {
     int puntos=0;
@@ -138,43 +137,36 @@ void calculoDado(int vectorD[6])
     rlutil::locate(10,30);
     system("pause");
 }
-int condicionEscalera(int vectorD[6])
-{
+//ESCALERA
+int condicionEscalera(int vectorD[6]){
     int trueEscalera=1;
-    for(int j=1; j<=6; j++)
-    {
+    for(int j=1; j<=6; j++){
         int positivismo=0;
-        for(int z=0; z<6; z++)
-        {
+        for(int z=0; z<6; z++){
             if(j==vectorD[z])
                 positivismo++;
-            if(positivismo>1)
-            {
+            if(positivismo>1){
                 trueEscalera=0;
             }
         }
     }
     return trueEscalera;
 }
-
-int condicionIguales (int vectorD[6])
-{
+//DADOS NUMEROS 6 IGUALES
+int condicionIguales (int vectorD[6]){
     int contadorSeis;
     int dados=0;
-    for(int r=0; r<6; r++)
-    {
-        if(vectorD[r]==6)
-        {
+    for(int r=0; r<6; r++){
+        if(vectorD[r]==6){
             contadorSeis++;
         }
     }
-    if(contadorSeis==6)
-    {
+    if(contadorSeis==6){
         dados=1;
     }
     return dados;
 }
-
+//MULTIPLICADOR DE NUMEROS
 int distintoDeSeis(int vectorD[6]){
     int contadorDistintos=0;
     int distinto=0;
@@ -199,7 +191,7 @@ int distintoDeSeis(int vectorD[6]){
     }
     return numRetorno;
 }
-
+//SUMA DE DADOS
 int sumaDeDados(int vectorD[6])
 {
     int sumaDePuntos=0;
@@ -209,6 +201,7 @@ int sumaDeDados(int vectorD[6])
     }
     return sumaDePuntos;
 }
+//CARGAR DADO MANUALMENTE
 void cargarDado (int VectorV [6]){
     int valor=0;
     for (int i=0; i<6; i++){
@@ -224,7 +217,8 @@ void cargarDado (int VectorV [6]){
         rlutil::locate(10,30);
     }
 }
- void juegoUno(std::string jugador1, std::string nombre,int sumaTotal,int vectorD[6],int opcion,int maxNum,int puntosLanzamiento1,int multiplicarPuntos,int band,int bandPuntaje,int maxPuntaje){
+//MODO DE JUEGO NUMERO UNO
+ void juegoUno(std::string jugador1, std::string nombre,int sumaTotal,int vectorD[6],int opcion,int maxNum,int puntosLanzamiento1,int multiplicarPuntos,int band,int bandPuntaje,int&maxPuntaje){
   system("cls");
   jugador1=guardarNombre(nombre);
     system("cls");
@@ -300,7 +294,7 @@ rlutil::locate(10,30);
 system("pause");
 system("cls");
     }
-if(bandPuntaje=0){
+if(bandPuntaje==0){
 maxPuntaje=sumaTotal;
 bandPuntaje=1;
 }else if(sumaTotal>maxPuntaje){
@@ -308,8 +302,8 @@ maxPuntaje=sumaTotal;
 }
 sumaTotal=0;
 }
-
-void juegoDos(std::string jugador1,std::string jugador2,std::string nombre,std::string nombreDos,int sumaTotal1,int vectorD[6],int opcion,int puntosLanzamiento1, int multiplicarPuntos,int band,int maxNum,int sumaTotal2,int puntosLanzamiento2,int band1,int maxNum2,int bandPuntajeDos,int maxPuntajeDos){
+//MODO DE JUEGO DOS JUGADORES
+void juegoDos(std::string jugador1,std::string jugador2,std::string nombre,std::string nombreDos,int sumaTotal1,int vectorD[6],int opcion,int puntosLanzamiento1, int multiplicarPuntos,int band,int maxNum,int sumaTotal2,int puntosLanzamiento2,int band1,int maxNum2,int bandPuntajeDos,int&maxPuntajeDos){
   system("cls");
  jugador1=guardarNombre(nombre);
  jugador2=guardarNombreDos(nombreDos);
@@ -507,8 +501,8 @@ rlutil::locate(10,30);
 system("pause");
 system("cls");
 }
-
-void mostrarPuntajes(int maxPuntaje,int maxPuntajeDos){
+//MOSTRAR PUNTAJES MAS ALTOS DE MODO DE JUEGO
+void mostrarPuntajes(int&maxPuntaje,int&maxPuntajeDos){
 system("cls");
 rlutil::locate(50,10);
 cout<<"EL PUNTAJE MAS ALTO OBTENIDO PARA MODO UN JUGADOR ES: "<<maxPuntaje<<endl;
@@ -522,7 +516,7 @@ rlutil::locate(10,30);
 system("pause");
 system("cls");
 }
-
+//MODO SIMULADO
 void modoSimulado(std::string jugador1,std::string nombre,int vectorD[6],int opcion,int puntosLanzamiento1,int sumaTotal,int multiplicarPuntos,int band,int maxNum){
 system("cls");
 jugador1=guardarNombre(nombre);
