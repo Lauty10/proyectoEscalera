@@ -84,7 +84,7 @@ case 1:
        puntosLanzamiento1=0;
        sumaTotal=0;
     }
-    else if (distintoDeSeis(vectorD)==6){
+    else if (distintoDeSeis(vectorD)!=6){
        multiplicarPuntos=distintoDeSeis(vectorD)*10;
        puntosLanzamiento1=multiplicarPuntos;
         rlutil::locate(58,14);
@@ -179,7 +179,7 @@ case 2:
      rlutil::locate(60,16);
      sumaTotal1=0;
     }
-    else if (distintoDeSeis(vectorD)==6){
+    else if (distintoDeSeis(vectorD)!=6){
      multiplicarPuntos=distintoDeSeis(vectorD)*10;
      puntosLanzamiento1=multiplicarPuntos;
      rlutil::locate(58,14);
@@ -382,7 +382,7 @@ case 4:
       rlutil::locate(60,16);
       sumaTotal=0;
     }
-    else if (distintoDeSeis(vectorD)==6){
+    else if (distintoDeSeis(vectorD)!=6){
        multiplicarPuntos=distintoDeSeis(vectorD)*10;
        puntosLanzamiento1=multiplicarPuntos;
         rlutil::locate(58,14);
