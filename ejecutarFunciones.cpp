@@ -84,7 +84,7 @@ case 1:
        puntosLanzamiento1=0;
        sumaTotal=0;
     }
-    else if (distintoDeSeis(vectorD)!=6){
+    else if (distintoDeSeis(vectorD)!=0){
        multiplicarPuntos=distintoDeSeis(vectorD)*10;
        puntosLanzamiento1=multiplicarPuntos;
         rlutil::locate(58,14);
@@ -179,7 +179,7 @@ case 2:
      rlutil::locate(60,16);
      sumaTotal1=0;
     }
-    else if (distintoDeSeis(vectorD)!=6){
+    else if (distintoDeSeis(vectorD)!=0){
      multiplicarPuntos=distintoDeSeis(vectorD)*10;
      puntosLanzamiento1=multiplicarPuntos;
      rlutil::locate(58,14);
@@ -240,7 +240,7 @@ case 2:
     rlutil::locate(60,16);
     sumaTotal2=0;
     }
-   else if (distintoDeSeis(vectorD)==6){
+   else if (distintoDeSeis(vectorD)!=0){
     multiplicarPuntos=distintoDeSeis(vectorD)*10;
     puntosLanzamiento2=multiplicarPuntos;
       rlutil::locate(58,14);
@@ -382,10 +382,11 @@ case 4:
       rlutil::locate(60,16);
       sumaTotal=0;
     }
-    else if (distintoDeSeis(vectorD)!=6){
+    else if (distintoDeSeis(vectorD)!=0){
+       cout<<distintoDeSeis(vectorD);
        multiplicarPuntos=distintoDeSeis(vectorD)*10;
        puntosLanzamiento1=multiplicarPuntos;
-        rlutil::locate(58,14);
+       rlutil::locate(58,14);
        cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
        rlutil::locate(58,16);
        cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
@@ -515,7 +516,7 @@ int dados=0;
    }
 
    int distintoDeSeis(int vectorD[6]){
-   int contadorDistintos;
+   int contadorDistintos=0;
    int distinto=0;
    int bandera=0;
    int numRetorno=0;
@@ -523,7 +524,7 @@ int dados=0;
     if(bandera==0 && vectorD[m]!=6){
        distinto=vectorD[m];
        contadorDistintos++;
-       bandera+1;
+       bandera=1;
        }else if(vectorD[m]==distinto&&vectorD[m]!=6){
        contadorDistintos++;
        }
