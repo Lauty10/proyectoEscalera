@@ -241,11 +241,13 @@ void cargarDado (int VectorV [6]){
     cout<<"ACUMULADO TOTAL: "<<sumaTotal;
     calculoDado(vectorD);
     system("cls");
-    if (condicionEscalera(vectorD)==1){
-    rlutil::locate(58,14);
-    cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
-    system("cls");
-    return crearMenu(opcion);
+if (condicionEscalera(vectorD)==1){
+rlutil::locate(50,14);
+cout<<"FELICIDADES SACASTE ESCALERA!! ERES EL GANADOR!!"<<endl;
+rlutil::locate(10,30);
+system("pause");
+system("cls");
+return crearMenu(opcion);
 }
 if (condicionIguales(vectorD)==1){
 rlutil::locate(58,14);
@@ -335,11 +337,13 @@ cout<<"ACUMULADO TOTAL: "<<sumaTotal1;
 calculoDado(vectorD);
 system("cls");
 if (condicionEscalera(vectorD)==1){
-rlutil::locate(58,14);
-cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
- system("cls");
- return crearMenu(opcion);
- }
+ rlutil::locate(50,14);
+cout<<"FELICIDADES SACASTE ESCALERA!! ERES EL GANADOR!!"<<endl;
+rlutil::locate(10,30);
+system("pause");
+system("cls");
+return crearMenu(opcion);
+}
  if (condicionIguales(vectorD)==1){
  rlutil::locate(58,14);
  cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
@@ -395,8 +399,10 @@ cout<<"ACUMULADO TOTAL: "<<sumaTotal2;
 calculoDado(vectorD);
 system("cls");
 if (condicionEscalera(vectorD)==1){
-rlutil::locate(58,14);
-cout<<"LA SUERTE ESTA DE TU LADO SACASTE ESCALERA :)"<<endl;
+ rlutil::locate(50,14);
+cout<<"FELICIDADES SACASTE ESCALERA!! ERES EL GANADOR!!"<<endl;
+rlutil::locate(10,30);
+system("pause");
 system("cls");
 return crearMenu(opcion);
 }
@@ -534,7 +540,10 @@ cout<<char(176);
 cargarDado(vectorD);
 system("cls");
 if (condicionEscalera(vectorD)==1){
+ rlutil::locate(50,14);
+cout<<"FELICIDADES SACASTE ESCALERA!! ERES EL GANADOR!!"<<endl;
 rlutil::locate(10,30);
+system("pause");
 system("cls");
 return crearMenu(opcion);
 }
