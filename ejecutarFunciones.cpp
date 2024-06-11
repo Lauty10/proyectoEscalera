@@ -154,7 +154,7 @@ case 2:
     cout<<nombre<<" TIRADA NUMERO: "<<tiradaUno;
      rlutil::locate(60,20);
      cout<<"EL TURNO DE TIRAR ES DE: "<<jugador1;
-     rlutil::locate(58,14);
+     rlutil::locate(56,5);
     cout<<nombre<<" USTED SE ENCUENTRA EN LA RONDA NUMERO: "<<j;
       for(int j=40;j<110;j++){
         rlutil::locate(j,7);
