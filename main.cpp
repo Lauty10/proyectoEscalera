@@ -9,8 +9,7 @@
 using namespace std;
 int main(){
 rlutil::setColor(rlutil::LIGHTGREEN);
-int opcion,vectorD[3],VectorV[6];
+int opcion;
 crearMenu(opcion);
-std::string nombre;
 return 0;
 }
