@@ -154,7 +154,7 @@ int condicionEscalera(int vectorD[6]){
 }
 //DADOS NUMEROS 6 IGUALES
 int condicionIguales (int vectorD[6]){
-    int contadorSeis;
+    int contadorSeis=0;
     int dados=0;
     for(int r=0; r<6; r++){
         if(vectorD[r]==6){
@@ -172,22 +172,19 @@ int distintoDeSeis(int vectorD[6]){
     int distinto=0;
     int bandera=0;
     int numRetorno=0;
-    for( int m=0; m<6; m++)
-    {
-        if(bandera==0 && vectorD[m]!=6)
-        {
+    for( int m=0; m<6; m++){
+        if(bandera==0 && vectorD[m]!=6){
             distinto=vectorD[m];
             contadorDistintos++;
             bandera=1;
         }
-        else if(vectorD[m]==distinto&&vectorD[m]!=6)
-        {
+        else if(vectorD[m]==distinto&&vectorD[m]!=6){
             contadorDistintos++;
         }
     }
     if(contadorDistintos==6)
     {
-        numRetorno=distinto;
+    numRetorno=distinto;
     }
     return numRetorno;
 }
@@ -235,49 +232,24 @@ void cargarDado (int VectorV [6]){
     cout<<"ACUMULADO TOTAL: "<<sumaTotal;
     calculoDado(vectorD);
     system("cls");
-if (condicionEscalera(vectorD)==1){
-rlutil::locate(50,14);
-cout<<"FELICIDADES SACASTE ESCALERA!! ERES EL GANADOR!!"<<endl;
-rlutil::locate(10,30);
-system("pause");
-system("cls");
-return crearMenu(opcion);
-}
-if (condicionIguales(vectorD)==1){
-rlutil::locate(58,14);
-cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
-puntosLanzamiento1=0;
-    sumaTotal=0;
-    }
-else if (distintoDeSeis(vectorD)!=0){
-    multiplicarPuntos=distintoDeSeis(vectorD)*10;
-    puntosLanzamiento1=multiplicarPuntos;
-    rlutil::locate(58,14);
-    cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
-    rlutil::locate(58,14);
-    cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
-    }else{
-    puntosLanzamiento1=sumaDeDados(vectorD);
-    rlutil::locate(58,14);
-    cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
-    }
-rlutil::locate(10,30);
-system("pause");
-system("cls");
-if(band==0){
- maxNum=puntosLanzamiento1;
-band=1;
-}else if(puntosLanzamiento1>maxNum){
+    resultado(condicionEscalera(vectorD),condicionIguales(vectorD),distintoDeSeis(vectorD),sumaDeDados(vectorD),opcion,puntosLanzamiento1,sumaTotal,multiplicarPuntos);
+    rlutil::locate(10,30);
+    system("pause");
+    system("cls");
+    if(band==0){
+    maxNum=puntosLanzamiento1;
+    band=1;
+    }else if(puntosLanzamiento1>maxNum){
     maxNum=puntosLanzamiento1;
     }
     }
-rlutil::locate(58,14);
-cout<<"EL MAXIMO NUMERO DE ESTA RONDA ES: "<<maxNum;
-rlutil::locate(10,30);
-system("pause");
-system("cls");
-sumaTotal+=maxNum;
-maxNum=0;
+   rlutil::locate(58,14);
+  cout<<"EL MAXIMO NUMERO DE ESTA RONDA ES: "<<maxNum;
+   rlutil::locate(10,30);
+   system("pause");
+   system("cls");
+   sumaTotal+=maxNum;
+   maxNum=0;
     }
 if(sumaTotal>=100){
 system("cls");
@@ -533,33 +505,7 @@ cout<<char(176);
 }
 cargarDado(vectorD);
 system("cls");
-if (condicionEscalera(vectorD)==1){
- rlutil::locate(50,14);
-cout<<"FELICIDADES SACASTE ESCALERA!! ERES EL GANADOR!!"<<endl;
-rlutil::locate(10,30);
-system("pause");
-system("cls");
-return crearMenu(opcion);
-}
-if (condicionIguales(vectorD)==1){
-rlutil::locate(50,14);
-cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
-puntosLanzamiento1=0;
-rlutil::locate(60,16);
-sumaTotal=0;
-}else if (distintoDeSeis(vectorD)!=0){
-cout<<distintoDeSeis(vectorD);
-multiplicarPuntos=distintoDeSeis(vectorD)*10;
-puntosLanzamiento1=multiplicarPuntos;
-rlutil::locate(58,14);
-cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
-rlutil::locate(58,16);
-cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
-}else{
-puntosLanzamiento1=sumaDeDados(vectorD);
-rlutil::locate(58,14);
-cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
-}
+ resultado(condicionEscalera(vectorD),condicionIguales(vectorD),distintoDeSeis(vectorD),sumaDeDados(vectorD),opcion,puntosLanzamiento1,sumaTotal,multiplicarPuntos);
 rlutil::locate(10,30);
 system("pause");
 system("cls");
@@ -594,5 +540,34 @@ system("pause");
 system("cls");
 }
 }
+
+void resultado(int escalera,int igualesSeis,int distintosSeis,int sumaDados,int opcion,int&puntosLanzamiento1,int&sumaTotal,int multiplicarPuntos){
+if (escalera==1){
+rlutil::locate(50,14);
+cout<<"FELICIDADES SACASTE ESCALERA!! ERES EL GANADOR!!"<<endl;
+rlutil::locate(10,30);
+system("pause");
+system("cls");
+return crearMenu(opcion);
+}
+if (igualesSeis==1){
+rlutil::locate(50,14);
+cout<<"TODOS LOS NUMEROS FUERON IGUALES A 6. PERDISTE TODOS TUS PUNTOS :("<<endl;
+puntosLanzamiento1=0;
+    sumaTotal=0;
+}else if (distintosSeis!=0){
+    multiplicarPuntos=distintosSeis*10;
+    puntosLanzamiento1=multiplicarPuntos;
+    rlutil::locate(58,14);
+    cout<<"TODOS LOS NUMEROS DEL DADO FUERON IGUALES :)"<<endl;
+    rlutil::locate(58,16);
+    cout<<"SUS PUNTOS EN ESTE LANZAMIENTO SON: "<<puntosLanzamiento1<<endl;
+    }else{
+    puntosLanzamiento1=sumaDados;
+    rlutil::locate(58,14);
+    cout<<"LA SUMA DE SUS DADOS EN ESTE LANZAMIENTO ES = "<<puntosLanzamiento1<<endl;
+    }
+}
+
 
 
