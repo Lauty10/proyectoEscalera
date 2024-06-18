@@ -103,8 +103,7 @@ void crearMenu(int opcion){
         int ancho=rlutil::tcols()/2;
          rlutil::locate(60,15);
          cout<<"INGRESE NOMBRE DEL JUGADOR: "<<endl;
-        for(int j=20; j<120; j++)
-       {
+        for(int j=20; j<120; j++){
          rlutil::locate(j,17);
          cout<<char(176);
        }
@@ -215,10 +214,27 @@ int condicionIguales (int vectorD[6]){
 }
 //MODO DE JUEGO NUMERO UNO
  void juegoUno(std::string jugador1, std::string nombre,int sumaTotal,int vectorD[6],int opcion,int maxNum,int puntosLanzamiento1,int multiplicarPuntos,int band,int bandPuntaje,int&maxPuntaje){
+         int x,confirmacion;
          system("cls");
          jugador1=guardarNombre(nombre);
          system("cls");
-        for(int j=1; j<=4; j++){
+         rlutil::locate(50,14);
+         cout<<"SI DESEA INGRESAR LA CANTIDAD DE RONDAS MANUALMENTE INGRESE 0";
+         rlutil::locate(50,16);
+         cout<<"INGRESE CUALQUIER NUMERO PARA RONDAS PREDETERMINADAS";
+         rlutil::locate(80,18);
+         cin>>confirmacion;
+         if(confirmacion==0){
+         system("cls");
+         rlutil::locate(60,14);
+         cout<<"INGRESE EL NUMERO DESEADO: ";
+         cin>>x;
+         system("cls");
+         }else{
+          x=4;
+         }
+         system("cls");
+        for(int j=1; j<=x; j++){
         for(int n=1; n<=3; n++){
          rlutil::locate(15,5);
          cout<<nombre<<" TIRADA NUMERO: "<<n;
@@ -278,13 +294,30 @@ int condicionIguales (int vectorD[6]){
 }
 //MODO DE JUEGO DOS JUGADORES
  void juegoDos(std::string jugador1,std::string jugador2,std::string nombre,std::string nombreDos,int sumaTotal1,int vectorD[6],int opcion,int puntosLanzamiento1, int multiplicarPuntos,int band,int maxNum,int sumaTotal2,int puntosLanzamiento2,int band1,int maxNum2,int bandPuntajeDos,int&maxPuntajeDos){
+         int x,confirmacion;
          system("cls");
          jugador1=guardarNombre(nombre);
          jugador2=guardarNombreDos(nombreDos);
          rlutil::locate(10,30);
          system("pause");
          system("cls");
-        for(int j=1; j<=4; j++){
+         rlutil::locate(50,14);
+         cout<<"SI DESEA INGRESAR LA CANTIDAD DE RONDAS MANUALMENTE INGRESE 0";
+         rlutil::locate(50,16);
+         cout<<"INGRESE CUALQUIER NUMERO PARA RONDAS PREDETERMINADAS";
+         rlutil::locate(80,18);
+         cin>>confirmacion;
+         if(confirmacion==0){
+         system("cls");
+         rlutil::locate(60,14);
+         cout<<"INGRESE EL NUMERO DESEADO: ";
+         cin>>x;
+         system("cls");
+         }else{
+          x=4;
+         }
+         system("cls");
+        for(int j=1; j<=x; j++){
         int tirada=true,tiradaUno=1,tiradoDos=1,contadorVueltas=0;
         for(int z=1; z<=6; z++){
         if(tirada==true){
